@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  openclinica-db:
+    image: wnameless/openclinica-db
+
+  openclinica:
+    image: wnameless/openclinica
+    ports:
+      - 8080:8080
+    expose:
+      - "8080"
+    depends_on:
+      - openclinica-db
